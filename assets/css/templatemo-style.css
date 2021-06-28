@@ -57,8 +57,12 @@ img {
 }
 @media only screen and (max-width: 600px) {
     .srushti{
-        height: 200px;
-        width: 150px;
+        height: 300px;
+        width: 250px;
+        margin: auto; 
+        display: block;
+        margin-left: auto;
+        margin-right: auto;      
     }
   }
 
