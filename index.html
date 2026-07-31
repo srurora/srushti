@@ -29,7 +29,8 @@
   --radius:8px;
   --font:Arial,"Helvetica Neue",Helvetica,sans-serif;
 }
-body{font-family:var(--font);background:var(--bg);color:var(--text);font-size:14px;line-height:1.4}
+html{overflow-x:hidden;width:100%}
+body{font-family:var(--font);background:var(--bg);color:var(--text);font-size:14px;line-height:1.4;overflow-x:hidden;width:100%}
 a{color:inherit;text-decoration:none}
 .wrap{max-width:1220px;margin:0 auto;padding:0 18px}
 img{display:block;max-width:100%}
@@ -37,14 +38,14 @@ button{font-family:inherit;cursor:pointer}
 
 /* ═══ TOP NAV ═══ */
 .topnav{background:var(--navy);color:#fff}
-.topnav-inner{max-width:1220px;margin:0 auto;display:flex;align-items:center;gap:14px;padding:9px 18px;flex-wrap:nowrap}
+.topnav-inner{max-width:1220px;margin:0 auto;display:flex;align-items:center;gap:14px;padding:9px 18px;flex-wrap:wrap;row-gap:10px}
 .tn-logo{font-size:1.5rem;font-weight:700;letter-spacing:.5px;flex-shrink:0;display:flex;align-items:baseline;gap:2px;padding:6px 4px;border:1px solid transparent;border-radius:3px}
 .tn-logo span{color:var(--orange)}
 .tn-deliver{display:flex;align-items:center;gap:6px;font-size:.78rem;flex-shrink:0;padding:6px;border:1px solid transparent;border-radius:3px;cursor:default}
 .tn-deliver:hover{border-color:#fff}
 .tn-deliver i{font-size:1rem;margin-top:6px}
 .tn-deliver b{display:block;font-size:.85rem;font-weight:700}
-.tn-search{flex:1;display:flex;height:38px;border-radius:4px;overflow:hidden;min-width:140px}
+.tn-search{flex:1 1 260px;display:flex;height:38px;border-radius:4px;overflow:hidden;min-width:0}
 .tn-search select{background:#f3f3f3;border:none;padding:0 8px;font-size:.72rem;color:#555;border-right:1px solid #a6a6a6}
 .tn-search input{flex:1;border:none;padding:0 10px;font-size:.85rem;min-width:0}
 .tn-search button{width:42px;background:var(--orange);border:none;display:flex;align-items:center;justify-content:center;color:var(--navy);font-size:1.05rem}
