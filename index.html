@@ -1,763 +1,269 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Srushti Sangawar — Software Engineer, Agentic AI</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Srushti Sangawar: software engineer building backend systems and agentic AI. Java, Spring Boot, Python, MCP, Claude.">
+<title>Srushti Sangawar | Software Engineer, Agentic AI</title>
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-:root{
-  --navy:#131921;
-  --navy2:#232F3E;
-  --navy3:#37475A;
-  --orange:#FF9900;
-  --yellow:#FFD814;
-  --yellow-border:#FCD200;
-  --buy-orange:#FFA41C;
-  --buy-orange-border:#FF8F00;
-  --bg:#EAEDED;
-  --white:#fff;
-  --text:#0F1111;
-  --text-dim:#565959;
-  --link:#007185;
-  --link-hover:#C7511F;
-  --green:#007600;
-  --red:#B12704;
-  --star:#FFA41C;
-  --border:#D5D9D9;
-  --radius:8px;
-  --font:Arial,"Helvetica Neue",Helvetica,sans-serif;
-}
-html{overflow-x:hidden;width:100%}
-body{font-family:var(--font);background:var(--bg);color:var(--text);font-size:14px;line-height:1.4;overflow-x:hidden;width:100%}
+:root{--navy:#131921;--navy2:#232F3E;--orange:#FF9900;--yellow:#FFD814;--yb:#FCD200;--bg:#EAEDED;--card:#fff;--text:#0F1111;--dim:#565959;--link:#007185;--hover:#C7511F;--green:#007600;--border:#D5D9D9;--chip:#F0F2F2;--hl:#FFF8EE;--star:#FFA41C;--font:Arial,"Helvetica Neue",Helvetica,sans-serif}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0b0f14;--card:#171d26;--text:#E8ECEF;--dim:#9AA7B2;--link:#4FC3DB;--hover:#FFB04D;--green:#4CC46A;--border:#2c3643;--chip:#222b37;--hl:#2a2418}}
+:root[data-theme=dark]{--bg:#0b0f14;--card:#171d26;--text:#E8ECEF;--dim:#9AA7B2;--link:#4FC3DB;--hover:#FFB04D;--green:#4CC46A;--border:#2c3643;--chip:#222b37;--hl:#2a2418}
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-behavior:smooth;scroll-padding-top:110px}
+body{font-family:var(--font);background:var(--bg);color:var(--text);font-size:15px;line-height:1.5;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
-.wrap{max-width:1220px;margin:0 auto;padding:0 18px}
-img{display:block;max-width:100%}
-button{font-family:inherit;cursor:pointer}
-
-/* ═══ TOP NAV ═══ */
-.topnav{background:var(--navy);color:#fff}
-.topnav-inner{max-width:1220px;margin:0 auto;display:flex;align-items:center;gap:14px;padding:9px 18px;flex-wrap:wrap;row-gap:10px}
-.tn-logo{font-size:1.5rem;font-weight:700;letter-spacing:.5px;flex-shrink:0;display:flex;align-items:baseline;gap:2px;padding:6px 4px;border:1px solid transparent;border-radius:3px}
-.tn-logo span{color:var(--orange)}
-.tn-deliver{display:flex;align-items:center;gap:6px;font-size:.78rem;flex-shrink:0;padding:6px;border:1px solid transparent;border-radius:3px;cursor:default}
-.tn-deliver:hover{border-color:#fff}
-.tn-deliver i{font-size:1rem;margin-top:6px}
-.tn-deliver b{display:block;font-size:.85rem;font-weight:700}
-.tn-search{flex:1 1 260px;display:flex;height:38px;border-radius:4px;overflow:hidden;min-width:0}
-.tn-search select{background:#f3f3f3;border:none;padding:0 8px;font-size:.72rem;color:#555;border-right:1px solid #a6a6a6}
-.tn-search input{flex:1;border:none;padding:0 10px;font-size:.85rem;min-width:0}
-.tn-search button{width:42px;background:var(--orange);border:none;display:flex;align-items:center;justify-content:center;color:var(--navy);font-size:1.05rem}
-.tn-search button:hover{background:#e88a00}
-.tn-item{font-size:.78rem;padding:6px;border:1px solid transparent;border-radius:3px;flex-shrink:0;line-height:1.15}
-.tn-item:hover{border-color:#fff}
-.tn-item b{display:block;font-size:.85rem;font-weight:700}
-.tn-cart{display:flex;align-items:center;gap:4px;padding:6px;border:1px solid transparent;border-radius:3px;flex-shrink:0;position:relative}
-.tn-cart:hover{border-color:#fff}
-.tn-cart i{font-size:1.6rem}
-.tn-cart .badge{position:absolute;top:-2px;left:14px;background:var(--orange);color:var(--navy);font-weight:700;font-size:.72rem;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center}
-.tn-cart .cart-label{font-weight:700;font-size:.85rem;margin-left:2px}
-@media(max-width:860px){.tn-deliver,.tn-item{display:none}}
-
-/* ═══ SUB NAV ═══ */
-.subnav{background:var(--navy2);color:#fff}
-.subnav-inner{max-width:1220px;margin:0 auto;display:flex;align-items:center;gap:2px;padding:0 12px;overflow-x:auto}
-.subnav a{display:flex;align-items:center;gap:6px;font-size:.82rem;font-weight:600;padding:9px 10px;white-space:nowrap;border:1px solid transparent}
-.subnav a:hover{border-color:#fff}
-.subnav .all-btn{background:transparent;gap:8px}
-.subnav .all-btn i{font-size:1rem}
-
-/* ═══ BREADCRUMB ═══ */
-.crumb{font-size:.78rem;color:var(--link);padding:12px 0 6px}
-.crumb span{color:var(--text-dim);margin:0 4px}
-.crumb a:hover{color:var(--link-hover);text-decoration:underline}
-
-/* ═══ HERO PRODUCT LAYOUT ═══ */
-.pdp{display:grid;grid-template-columns:88px 230px 1fr 340px;gap:26px;background:var(--white);padding:22px;border-radius:var(--radius);margin-bottom:20px}
-.pdp-thumbs{display:flex;flex-direction:column;gap:8px}
-.pdp-thumb{width:56px;height:56px;border:2px solid var(--border);border-radius:6px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.1rem}
-.pdp-thumb.active{border-color:var(--orange)}
-.pdp-main-img{display:flex;flex-direction:column;align-items:center;gap:14px}
-.pdp-main-img .avatar{width:230px;height:230px;border-radius:50%;object-fit:cover;border:1px solid var(--border)}
-.pdp-info h1{font-size:1.5rem;font-weight:400;margin-bottom:4px}
-.pdp-byline{font-size:.85rem;color:var(--link);margin-bottom:10px}
-.pdp-byline:hover{color:var(--link-hover);text-decoration:underline;cursor:pointer}
-.rating-row{display:flex;align-items:center;gap:10px;margin-bottom:10px;padding-bottom:10px;border-bottom:1px solid var(--border)}
-.stars{position:relative;display:inline-block;font-size:1rem;line-height:1;letter-spacing:2px}
-.stars .empty{color:#d5d9d9}
-.stars .filled{position:absolute;top:0;left:0;overflow:hidden;white-space:nowrap;color:var(--star)}
-.rating-num{color:var(--link);font-size:.85rem}
-.rating-num:hover{color:var(--link-hover);text-decoration:underline;cursor:pointer}
-.badge-choice{display:inline-flex;align-items:center;gap:5px;background:var(--navy2);color:#fff;font-size:.72rem;font-weight:700;padding:3px 8px;border-radius:3px;margin-bottom:14px}
-.badge-choice .amz{color:var(--orange)}
-.about-title{font-weight:700;font-size:.95rem;margin:8px 0 8px}
-.about-list{list-style:none;display:grid;gap:8px}
-.about-list li{font-size:.9rem;padding-left:16px;position:relative;line-height:1.55}
-.about-list li::before{content:'•';position:absolute;left:0;color:var(--text)}
-.pdp-tags{margin-top:16px;display:flex;flex-wrap:wrap;gap:6px}
-.pdp-tags span{font-size:.72rem;color:var(--link);background:#F0F2F2;border:1px solid var(--border);padding:3px 9px;border-radius:14px}
-
-/* buy box */
-.buybox{border:1px solid var(--border);border-radius:8px;padding:16px}
-.bb-status{color:var(--green);font-weight:700;font-size:1.05rem;margin-bottom:2px}
-.bb-sub{font-size:.82rem;color:var(--text-dim);margin-bottom:10px}
-.bb-prime{display:flex;align-items:center;gap:6px;font-size:.8rem;color:var(--navy2);font-weight:700;margin-bottom:12px}
-.bb-prime i{color:#00A8E1}
-.bb-row{font-size:.85rem;margin-bottom:4px}
-.bb-row b{font-weight:600}
-.bb-divider{border:none;border-top:1px solid var(--border);margin:12px 0}
-.bb-ship{font-size:.82rem;line-height:1.7}
-.bb-ship a{color:var(--link)}
-.bb-ship a:hover{color:var(--link-hover);text-decoration:underline}
-.bb-btn{display:block;width:100%;text-align:center;padding:9px 0;border-radius:20px;font-size:.9rem;font-weight:600;margin-top:10px;border:1px solid}
-.bb-btn-yellow{background:var(--yellow);border-color:var(--yellow-border)}
-.bb-btn-yellow:hover{background:#F7CA00}
-.bb-btn-orange{background:var(--buy-orange);border-color:var(--buy-orange-border);color:#fff}
-.bb-btn-orange:hover{background:#fa8f0d}
-.bb-btn-outline{background:#fff;border-color:var(--border);color:var(--link)}
-.bb-btn-outline:hover{background:#F7FAFA}
-.bb-secure{display:flex;align-items:flex-start;gap:8px;font-size:.76rem;color:var(--text-dim);margin-top:14px}
-.bb-secure i{margin-top:2px;color:var(--text-dim)}
-@media(max-width:1080px){.pdp{grid-template-columns:1fr;}.pdp-thumbs{flex-direction:row}}
-
-/* ═══ SECTION HEADERS ═══ */
-.sec{background:var(--white);border-radius:var(--radius);padding:22px;margin-bottom:20px}
-.sec-title{font-size:1.25rem;font-weight:700;margin-bottom:4px}
-.sec-sub{font-size:.85rem;color:var(--text-dim);margin-bottom:16px}
-
-/* ═══ COMPARE TABLE ═══ */
-.cmp-table{width:100%;border-collapse:collapse;font-size:.85rem}
-.cmp-table th,.cmp-table td{padding:10px 12px;text-align:center;border-bottom:1px solid var(--border);vertical-align:middle}
-.cmp-table td:first-child,.cmp-table th:first-child{text-align:left;font-weight:600;min-width:220px}
-.cmp-table th{font-weight:700;font-size:.82rem;color:var(--text-dim)}
-.cmp-table th.hl{color:var(--text);background:#FFF8EE;border-top:3px solid var(--orange)}
-.cmp-table td.hl{background:#FFF8EE}
-.cmp-table .yes{color:var(--green);font-size:1.1rem}
-.cmp-table .partial{color:var(--orange);font-size:1.1rem}
-.cmp-table .no{color:#c7c7c7;font-size:1.1rem}
-.cmp-table th small{display:block;font-weight:400;color:var(--text-dim);font-size:.72rem;margin-top:2px}
-
-/* ═══ RESULTS / PROJECTS ═══ */
-.results-count{font-size:.85rem;color:var(--text-dim);margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid var(--border)}
-.result{display:grid;grid-template-columns:150px 1fr;gap:20px;padding:18px 0;border-bottom:1px solid var(--border)}
-.result:last-child{border-bottom:none;padding-bottom:0}
-.result-thumb{width:150px;height:150px;border-radius:6px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:2.4rem}
-.result-badges{display:flex;gap:6px;margin-bottom:6px}
-.rb{font-size:.68rem;font-weight:700;padding:2px 7px;border-radius:3px;letter-spacing:.02em}
-.rb-choice{background:var(--navy2);color:#fff}
-.rb-choice i{color:var(--orange)}
-.rb-early{background:#F0F2F2;color:var(--text-dim);border:1px solid var(--border)}
-.result h3{font-size:1.05rem;font-weight:500;color:var(--link);margin-bottom:4px}
-.result h3:hover{color:var(--link-hover);text-decoration:underline;cursor:pointer}
-.result .rr-rating{display:flex;align-items:center;gap:8px;margin-bottom:8px}
-.result .rr-rating .stars{font-size:.9rem}
-.result .rr-rating .rating-num{font-size:.8rem}
-.result p{font-size:.87rem;color:var(--text);margin-bottom:8px;line-height:1.6}
-.result .stack-line{font-size:.78rem;color:var(--text-dim);margin-bottom:8px}
-.result .stack-line b{color:var(--text)}
-.result .cap-tags span{font-size:.72rem;color:var(--link);background:#F0F2F2;border:1px solid var(--border);padding:2px 8px;border-radius:12px;margin-right:6px}
-
-/* ═══ ORDER HISTORY (EXPERIENCE) ═══ */
-.order{border:1px solid var(--border);border-radius:6px;margin-bottom:16px;overflow:hidden}
-.order-head{display:flex;flex-wrap:wrap;gap:24px;background:#F0F2F2;padding:12px 18px;font-size:.76rem}
-.order-head .oh-block b{display:block;font-size:.68rem;text-transform:uppercase;color:var(--text-dim);font-weight:700;letter-spacing:.03em}
-.order-head .oh-block span{font-size:.82rem;color:var(--text)}
-.order-head .oh-num{margin-left:auto;text-align:right}
-.order-body{display:grid;grid-template-columns:80px 1fr;gap:18px;padding:18px}
-.order-logo{width:80px;height:80px;border-radius:6px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:1.3rem;flex-shrink:0}
-.order-role{font-size:1.02rem;font-weight:700;margin-bottom:2px}
-.order-company{color:var(--link);font-size:.88rem;margin-bottom:2px}
-.order-loc{font-size:.78rem;color:var(--text-dim);margin-bottom:12px}
-.progress{display:flex;align-items:center;margin-bottom:14px;max-width:min(420px,100%)}
-.progress .pdot{width:12px;height:12px;border-radius:50%;background:var(--green);flex-shrink:0}
-.progress .pline{flex:1;height:3px;background:var(--green)}
-.progress-labels{display:flex;justify-content:space-between;font-size:.68rem;color:var(--green);font-weight:700;max-width:min(420px,100%);margin-bottom:14px;text-transform:uppercase;letter-spacing:.02em}
-.order details summary{cursor:pointer;color:var(--link);font-size:.85rem;font-weight:600;list-style:none;display:flex;align-items:center;gap:6px}
-.order details summary::-webkit-details-marker{display:none}
-.order details summary::before{content:'\25B8';transition:transform .2s}
-.order details[open] summary::before{transform:rotate(90deg)}
-.order details summary:hover{color:var(--link-hover)}
-.order-list{list-style:none;margin-top:12px;display:grid;gap:8px}
-.order-list li{font-size:.87rem;padding-left:16px;position:relative;line-height:1.6}
-.order-list li::before{content:'▸';position:absolute;left:0;color:var(--orange)}
-.order-tags{margin-top:10px;display:flex;flex-wrap:wrap;gap:6px}
-.order-tags span{font-size:.7rem;color:var(--text-dim);background:#F0F2F2;padding:2px 8px;border-radius:10px}
-@media(max-width:640px){.order-body{grid-template-columns:1fr}.order-logo{width:56px;height:56px}}
-
-/* ═══ SKILLS "FREQUENTLY USED TOGETHER" ═══ */
-.skill-groups{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
-.skill-group h4{font-size:.8rem;text-transform:uppercase;letter-spacing:.04em;color:var(--text-dim);margin-bottom:10px;font-weight:700}
-.skill-chip-row{display:flex;flex-wrap:wrap;gap:7px}
-.skill-chip{font-size:.8rem;color:var(--text);background:#F0F2F2;border:1px solid var(--border);padding:4px 10px;border-radius:14px}
-
-/* ═══ AWARDS "AMAZON'S CHOICE" ═══ */
-.award-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
-.award-card{border:1px solid var(--border);border-radius:8px;padding:16px;position:relative}
-.award-ribbon{display:inline-flex;align-items:center;gap:5px;background:var(--navy2);color:#fff;font-size:.68rem;font-weight:700;padding:3px 8px;border-radius:3px;margin-bottom:10px}
-.award-ribbon i{color:var(--orange)}
-.award-card h5{font-size:.92rem;font-weight:700;margin-bottom:6px}
-.award-card p{font-size:.8rem;color:var(--text-dim);line-height:1.6}
-
-/* ═══ CHECKOUT / CONTACT ═══ */
-.checkout{background:var(--white);border-radius:var(--radius);padding:26px;margin-bottom:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:18px}
-.checkout-copy h3{font-size:1.15rem;margin-bottom:4px}
-.checkout-copy p{font-size:.85rem;color:var(--text-dim);max-width:440px}
-.checkout-actions{display:flex;gap:10px;flex-wrap:wrap}
-.co-btn{padding:11px 22px;border-radius:20px;font-size:.88rem;font-weight:700;border:1px solid}
-.co-primary{background:var(--yellow);border-color:var(--yellow-border)}
-.co-primary:hover{background:#F7CA00}
-.co-secondary{background:#fff;border-color:var(--border);color:var(--link)}
-.co-secondary:hover{background:#F7FAFA}
-
-/* ═══ FOOTER ═══ */
-.back-top{background:var(--navy3);color:#fff;text-align:center;padding:14px 0;font-size:.82rem;cursor:pointer}
-.back-top:hover{background:#3f5570}
-.footer{background:var(--navy2);color:#ddd}
-.footer-cols{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:24px;padding:36px 18px}
-.footer-cols h6{color:#fff;font-size:.88rem;font-weight:700;margin-bottom:12px}
-.footer-cols a{display:block;font-size:.8rem;color:#ddd;margin-bottom:8px}
-.footer-cols a:hover{text-decoration:underline}
-.footer-bottom{border-top:1px solid #3a4553;text-align:center;padding:16px;font-size:.75rem;color:#aab7c4}
-
-.reveal{opacity:0;transform:translateY(10px);transition:opacity .5s ease,transform .5s ease}
-.reveal.visible{opacity:1;transform:translateY(0)}
-
-/* ═══ MOBILE (phones) ═══ */
-@media(max-width:600px){
-  html,body{-webkit-text-size-adjust:100%}
-  a,button{-webkit-tap-highlight-color:rgba(255,153,0,.25)}
-  .wrap{padding:0 12px}
-
-  .topnav-inner{padding:8px 12px;gap:8px}
-  .tn-logo{font-size:1.25rem}
-  .tn-search{flex-basis:100%;order:3;height:40px}
-  .tn-search select{display:none}
-  .tn-search input{font-size:16px}
-  .tn-cart{margin-left:auto}
-  .tn-cart .cart-label{display:none}
-
-  .subnav-inner{padding:0 8px}
-  .subnav a{padding:9px 8px;font-size:.78rem}
-
-  .crumb{font-size:.7rem;line-height:1.8}
-
-  .pdp{padding:14px;gap:16px;margin-bottom:14px}
-  .pdp-thumbs{justify-content:center;flex-wrap:wrap}
-  .pdp-thumb{width:44px;height:44px;font-size:.9rem}
-  .pdp-main-img .avatar{width:150px;height:150px}
-  .pdp-info h1{font-size:1.15rem;line-height:1.3}
-  .pdp-byline{font-size:.8rem}
-  .about-list li{font-size:.85rem}
-
-  .buybox{padding:14px}
-  .bb-status{font-size:1rem}
-
-  .sec{padding:14px;margin-bottom:14px}
-  .sec-title{font-size:1.08rem}
-
-  .cmp-table{font-size:.78rem}
-  .cmp-table th,.cmp-table td{padding:8px 10px}
-  .cmp-table td:first-child,.cmp-table th:first-child{min-width:170px}
-
-  .result{grid-template-columns:96px 1fr;gap:12px;padding:14px 0}
-  .result-thumb{width:96px;height:96px;font-size:1.6rem;border-radius:6px}
-  .result h3{font-size:.95rem}
-  .result p{font-size:.82rem}
-
-  .order-head{gap:10px 18px;padding:10px 12px}
-  .order-body{padding:14px;gap:12px}
-  .order-logo{width:48px;height:48px;font-size:1rem}
-  .order-role{font-size:.92rem}
-
-  .award-grid{grid-template-columns:1fr}
-
-  .checkout{flex-direction:column;align-items:stretch;padding:18px;text-align:left}
-  .checkout-actions{flex-direction:column}
-  .co-btn{text-align:center}
-
-  .footer-cols{grid-template-columns:repeat(2,1fr);padding:28px 16px;gap:20px}
-}
-
-@media(max-width:380px){
-  .pdp-main-img .avatar{width:130px;height:130px}
-  .result{grid-template-columns:80px 1fr}
-  .result-thumb{width:80px;height:80px;font-size:1.3rem}
-}
+button{font:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--orange);outline-offset:2px;border-radius:3px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 18px}
+.head{position:sticky;top:0;z-index:20}
+.top{background:var(--navy);color:#fff}
+.top-in{max-width:1180px;margin:0 auto;display:flex;align-items:center;gap:14px;padding:10px 18px;flex-wrap:wrap}
+.logo{font-size:1.5rem;font-weight:700}.logo span{color:var(--orange)}
+.search{flex:1 1 260px;display:flex;height:40px;border-radius:4px;overflow:hidden}
+.search input{flex:1;border:0;padding:0 12px;font-size:16px;min-width:0;background:#fff;color:#0F1111}
+.search button{width:46px;border:0;background:var(--orange);color:var(--navy);font-weight:700}
+.tbtn{background:none;border:1px solid #4a5666;color:#fff;border-radius:4px;padding:7px 11px;font-size:.8rem}
+.tbtn:hover{border-color:#fff}
+.sub{background:var(--navy2);color:#fff}
+.sub-in{max-width:1180px;margin:0 auto;display:flex;gap:2px;padding:0 12px;overflow-x:auto}
+.sub a{padding:9px 12px;font-size:.85rem;font-weight:600;white-space:nowrap;border:1px solid transparent}
+.sub a:hover,.sub a.on{border-color:#fff}
+.crumb{font-size:.78rem;color:var(--link);padding:14px 0 8px}.crumb i{font-style:normal;color:var(--dim);margin:0 5px}
+.pdp{display:grid;grid-template-columns:220px 1fr 330px;gap:28px;background:var(--card);padding:24px;border-radius:8px;margin-bottom:20px}
+.avatar{width:220px;height:220px;border-radius:50%;object-fit:cover;border:1px solid var(--border);background:linear-gradient(135deg,#232F3E,#37475A);color:#fff;display:flex;align-items:center;justify-content:center;font-size:3.4rem;font-weight:700}
+h1{font-size:1.65rem;font-weight:400;line-height:1.25;margin-bottom:4px}
+.by{font-size:.88rem;color:var(--link);margin-bottom:10px}
+.rate{display:flex;align-items:center;gap:10px;padding-bottom:10px;margin-bottom:10px;border-bottom:1px solid var(--border);font-size:.88rem}
+.stars{color:var(--star);letter-spacing:2px}
+.choice{display:inline-block;background:var(--navy2);color:#fff;font-size:.72rem;font-weight:700;padding:3px 8px;border-radius:3px}
+.choice b{color:var(--orange)}
+.pdp h2{font-size:.98rem;margin:14px 0 8px}
+.about{list-style:none;display:grid;gap:7px}
+.about li{padding-left:16px;position:relative;max-width:68ch}
+.about li::before{content:'•';position:absolute;left:0}
+.tags{margin-top:14px;display:flex;flex-wrap:wrap;gap:6px}
+.tags span,.cap span{font-size:.74rem;color:var(--link);background:var(--chip);border:1px solid var(--border);padding:3px 9px;border-radius:14px}
+.buy{border:1px solid var(--border);border-radius:8px;padding:16px;align-self:start}
+.buy .st{color:var(--green);font-weight:700;font-size:1.05rem}
+.buy p{font-size:.84rem;color:var(--dim);margin:2px 0 8px}
+.buy hr{border:0;border-top:1px solid var(--border);margin:12px 0}
+.btn{display:block;width:100%;text-align:center;padding:10px;border-radius:20px;font-weight:600;font-size:.9rem;margin-top:10px;border:1px solid var(--border);background:var(--card);color:var(--link)}
+.btn:hover{filter:brightness(.96)}
+.btn.y{background:var(--yellow);border-color:var(--yb);color:#0F1111}
+.btn.o{background:#FFA41C;border-color:#FF8F00;color:#0F1111}
+.sec{background:var(--card);border-radius:8px;padding:24px;margin-bottom:20px}
+.sec>h2{font-size:1.3rem;margin-bottom:4px}
+.sub2{font-size:.86rem;color:var(--dim);margin-bottom:16px}
+.tw{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:.86rem}
+th,td{padding:10px 12px;text-align:center;border-bottom:1px solid var(--border)}
+td:first-child{text-align:left;font-weight:600;min-width:230px}
+th{color:var(--dim);font-size:.82rem}
+th small{display:block;font-weight:400}
+.hl{background:var(--hl)}th.hl{color:var(--text);border-top:3px solid var(--orange)}
+.y1{color:var(--green);font-weight:700}.p1{color:var(--orange);font-weight:700}.n1{color:var(--dim)}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.fchip{background:var(--chip);border:1px solid var(--border);color:var(--text);padding:6px 14px;border-radius:16px;font-size:.82rem}
+.fchip[aria-pressed=true]{background:var(--navy2);color:#fff;border-color:var(--navy2)}
+.count{font-size:.85rem;color:var(--dim);padding:10px 0 4px;border-bottom:1px solid var(--border)}
+.res{display:grid;grid-template-columns:130px 1fr;gap:20px;padding:18px 0;border-bottom:1px solid var(--border)}
+.res:last-child{border-bottom:0}
+.thumb{width:130px;height:130px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.5rem;font-weight:700;text-align:center;line-height:1.2}
+.res h3{font-size:1.08rem;font-weight:500;color:var(--link);margin:6px 0 4px}
+.res h3 a:hover{color:var(--hover);text-decoration:underline}
+.res p{max-width:72ch;margin-bottom:6px}
+.stack{font-size:.8rem;color:var(--dim);margin-bottom:8px}
+.cap span{margin-right:6px;display:inline-block;margin-bottom:4px}
+.ord{border:1px solid var(--border);border-radius:8px;margin-bottom:16px;overflow:hidden}
+.oh{display:flex;flex-wrap:wrap;gap:6px 28px;background:var(--chip);padding:12px 18px;font-size:.82rem}
+.oh b{display:block;font-size:.68rem;color:var(--dim);font-weight:700}
+.oh .num{margin-left:auto;text-align:right}
+.ob{padding:18px}
+.role{font-size:1.05rem;font-weight:700}
+.co{color:var(--link);font-size:.9rem}
+.blurb{font-size:.84rem;color:var(--dim);margin:6px 0 10px;max-width:78ch;font-style:italic}
+.prog{display:flex;align-items:center;max-width:380px;margin:10px 0 4px}
+.prog i{width:12px;height:12px;border-radius:50%;background:var(--green)}.prog u{flex:1;height:3px;background:var(--green)}
+.pl{display:flex;justify-content:space-between;max-width:380px;font-size:.68rem;font-weight:700;color:var(--green);margin-bottom:12px}
+details summary{cursor:pointer;color:var(--link);font-weight:600;font-size:.88rem;list-style:none}
+details summary::before{content:'▸ ';display:inline-block;transition:transform .2s}
+details[open] summary::before{transform:rotate(90deg)}
+details ul{margin-top:10px;list-style:none;display:grid;gap:8px}
+details li{padding-left:16px;position:relative;max-width:84ch}
+details li::before{content:'▸';position:absolute;left:0;color:var(--orange)}
+.sg{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.sg h4{font-size:.85rem;color:var(--dim);margin-bottom:8px}
+.chips{display:flex;flex-wrap:wrap;gap:7px}
+.chip{font-size:.8rem;background:var(--chip);border:1px solid var(--border);padding:4px 10px;border-radius:14px}
+.ag{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.aw{border:1px solid var(--border);border-radius:8px;padding:16px}
+.aw .choice{margin-bottom:8px}
+.aw h3{font-size:.95rem;margin-bottom:4px}.aw p{font-size:.84rem;color:var(--dim)}
+.edu{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.edu div{border-left:3px solid var(--orange);padding-left:14px}
+.edu b{display:block}.edu small{color:var(--dim)}
+.co-box{background:var(--card);border-radius:8px;padding:26px;margin-bottom:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:18px}
+.co-box h2{font-size:1.2rem;margin-bottom:4px}.co-box p{color:var(--dim);font-size:.9rem;max-width:460px}
+.acts{display:flex;gap:10px;flex-wrap:wrap}.acts .btn{width:auto;margin:0;padding:10px 22px}
+footer{background:var(--navy2);color:#aab7c4;text-align:center;padding:20px 16px;font-size:.78rem}
+#toast{position:fixed;bottom:calc(20px + env(safe-area-inset-bottom,0px));left:50%;transform:translateX(-50%) translateY(20px);background:var(--navy);color:#fff;padding:10px 18px;border-radius:6px;opacity:0;pointer-events:none;transition:.25s}
+#toast.show{opacity:1;transform:translateX(-50%)}
+mark{background:#FFE08A;color:#000;padding:0 2px}
+@media(max-width:1000px){.pdp{grid-template-columns:200px 1fr}.buy{grid-column:1/-1}}
+@media(max-width:640px){.wrap{padding:0 12px}.pdp{grid-template-columns:1fr;padding:16px}.avatar{width:140px;height:140px;font-size:2.4rem}h1{font-size:1.25rem}.sec{padding:16px}.res{grid-template-columns:84px 1fr;gap:12px}.thumb{width:84px;height:84px;font-size:1rem}.logo{font-size:1.25rem}.search{order:3;flex-basis:100%}.oh .num{margin-left:0;text-align:left}.co-box{flex-direction:column;align-items:stretch}.acts{flex-direction:column}.acts .btn{width:100%}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 </style>
 </head>
 <body>
-
-<!-- ═══ TOP NAV ═══ -->
-<div class="topnav">
-  <div class="topnav-inner">
-    <a href="#top" class="tn-logo">srushti<span>.dev</span></a>
-    <a href="#top" class="tn-deliver"><i class="fa-solid fa-location-dot"></i>
-      <span><b>Deliver to Recruiters</b>Denver / Boulder, CO</span>
-    </a>
-    <form class="tn-search" onsubmit="return doSearch(event)">
-      <select><option>All Departments</option><option>Projects</option><option>Skills</option></select>
-      <input id="siteSearch" type="text" placeholder="Search projects, skills, experience…">
-      <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-    </form>
-    <a href="mailto:srushtisangawar@gmail.com" class="tn-item"><b>Hello, Recruiter</b>Sign in / Message</a>
-    <a href="#experience" class="tn-item"><b>Returns</b>&amp; Orders</a>
-    <a href="#projects" class="tn-cart"><i class="fa-solid fa-cart-shopping"></i><span class="badge">4</span><span class="cart-label">Portfolio</span></a>
-  </div>
-</div>
-
-<!-- ═══ SUB NAV ═══ -->
-<div class="subnav">
-  <div class="subnav-inner">
-    <a href="#top" class="all-btn"><i class="fa-solid fa-bars"></i> All</a>
-    <a href="#projects">Projects</a>
-    <a href="#experience">Experience</a>
-    <a href="#skills">Skills</a>
-    <a href="#awards">Awards</a>
-    <a href="#contact">Contact</a>
-    <a href="https://github.com/srurora" target="_blank">GitHub</a>
-    <a href="https://www.linkedin.com/in/srushti-sangawar-64984717a/" target="_blank">LinkedIn</a>
-  </div>
+<div class="head">
+ <div class="top"><div class="top-in">
+  <a href="#top" class="logo">srushti<span>.dev</span></a>
+  <form class="search" id="sf" role="search"><input id="q" type="search" placeholder="Search projects, skills, experience" aria-label="Search portfolio"><button aria-label="Search">Go</button></form>
+  <button class="tbtn" id="theme" type="button">Theme</button>
+  <a class="tbtn" href="#contact">Contact</a>
+ </div></div>
+ <nav class="sub" aria-label="Sections"><div class="sub-in">
+  <a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#awards">Awards</a><a href="#education">Education</a><a href="#contact">Contact</a>
+  <a href="https://github.com/srurora" target="_blank" rel="noopener">GitHub</a>
+  <a href="https://www.linkedin.com/in/srushti-sangawar-64984717a/" target="_blank" rel="noopener">LinkedIn</a>
+ </div></nav>
 </div>
 
 <div class="wrap" id="top">
+ <div class="crumb">Home<i>›</i>Software Engineers<i>›</i>Agentic AI<i>›</i>Srushti Sangawar</div>
 
-  <div class="crumb reveal">
-    <a href="#top">Home</a><span>›</span>
-    <a href="#top">Engineering &amp; IT</a><span>›</span>
-    <a href="#top">Software Engineers</a><span>›</span>
-    <a href="#top">Agentic AI</a><span>›</span> Srushti Sangawar
+ <section class="pdp">
+  <img class="avatar" src="assets/images/me5.jpeg" alt="Srushti Sangawar" onerror="this.outerHTML='<div class=avatar aria-label=\'Srushti Sangawar\'>SS</div>'">
+  <div>
+   <h1>Srushti Sangawar, Software Engineer (Backend &amp; Agentic AI)</h1>
+   <div class="by">Visit the srushti.dev Store · Java / Spring Boot, Python, React / TypeScript, PostgreSQL</div>
+   <div class="rate"><span class="stars" aria-hidden="true">★★★★★</span><span>4.8 · MS CS (AI), CU Boulder · 3.91 GPA</span></div>
+   <span class="choice"><b>★</b> Amazon's Choice for "backend engineer who ships agentic AI"</span>
+   <h2>About this candidate</h2>
+   <ul class="about">
+    <li>4 years building high-availability backend services, full-stack apps, and automated workflow systems.</li>
+    <li>Built and deployed autonomous AI agents with Claude and the Model Context Protocol (MCP) for delivery workflows, compliance checks, and pull-request triage.</li>
+    <li>Led a zero-downtime SurrealDB to PostgreSQL migration across 23+ tables, with JWT RS256, TOTP MFA, and RBAC on top.</li>
+    <li>Ran Lowe's Order Management System services through Black Friday on-call: Kafka, Spring Boot 3, Prometheus.</li>
+    <li>Contributor to open source security tooling (Zizmor CI workflow for collective/icalendar).</li>
+   </ul>
+   <div class="tags"><span>#AgenticAI</span><span>#MCP</span><span>#ClaudeCode</span><span>#SpringBoot</span><span>#PostgreSQL</span><span>#IAM</span></div>
   </div>
+  <aside class="buy">
+   <div class="st">Open to full-time roles</div>
+   <p>Replies within 1 business day</p>
+   <p><b style="color:var(--text)">Location:</b> Denver, CO · open to relocate</p>
+   <hr>
+   <p>Sold by <a href="mailto:srushtisangawar@gmail.com" style="color:var(--link)">srushtisangawar@gmail.com</a></p>
+   <a class="btn y" href="mailto:srushtisangawar@gmail.com">Email Srushti</a>
+   <a class="btn o" href="tel:+17206411726">Call (720) 641-1726</a>
+   <a class="btn" href="https://www.linkedin.com/in/srushti-sangawar-64984717a/" target="_blank" rel="noopener">Connect on LinkedIn</a>
+   <button class="btn" type="button" id="copy">Copy email</button>
+  </aside>
+ </section>
 
-  <!-- ═══ PRODUCT HERO ═══ -->
-  <div class="pdp reveal">
-    <div class="pdp-thumbs">
-      <div class="pdp-thumb active" style="background:linear-gradient(135deg,#232F3E,#37475A)"><i class="fa-brands fa-java"></i></div>
-      <div class="pdp-thumb" style="background:linear-gradient(135deg,#306998,#1e2b3a)"><i class="fa-brands fa-python"></i></div>
-      <div class="pdp-thumb" style="background:linear-gradient(135deg,#326CE5,#1a3d8f)"><i class="fa-solid fa-dharmachakra"></i></div>
-      <div class="pdp-thumb" style="background:linear-gradient(135deg,#61DAFB,#1a7a99)"><i class="fa-brands fa-react"></i></div>
-      <div class="pdp-thumb" style="background:linear-gradient(135deg,#FF9900,#c26a00)"><i class="fa-solid fa-robot"></i></div>
-    </div>
-    <div class="pdp-main-img">
-      <img class="avatar" src="assets/images/me5.jpeg" alt="Srushti Sangawar">
-    </div>
-    <div class="pdp-info">
-      <h1>Srushti Sangawar — Software Engineer, Agentic AI</h1>
-      <div class="pdp-byline">Visit the srushti.dev Store · Backend engineer directing Claude Code to ship production systems</div>
-      <div class="rating-row">
-        <span class="stars" style="width:80px">
-          <span class="empty">★★★★★</span>
-          <span class="filled" style="width:96%">★★★★★</span>
-        </span>
-        <span class="rating-num">4.8 · MS CS (AI), CU Boulder — 3.9 GPA</span>
-      </div>
-      <div class="badge-choice"><i class="fa-solid fa-award amz"></i> Amazon's Choice — for "backend engineer who ships agentic AI"</div>
-      <div class="about-title">About this candidate</div>
-      <ul class="about-list">
-        <li>Backend engineer (Java / Spring Boot) now directing coding agents like Claude Code to ship real systems end-to-end</li>
-        <li>3 years of production experience, including retail-scale distributed systems handling 10M+ daily transactions</li>
-        <li>Hands-on with RAG pipelines, custom MCP servers, and human-in-the-loop guardrails for autonomous agents</li>
-        <li>MS in Computer Science (AI concentration), University of Colorado Boulder — 3.9 GPA</li>
-        <li>Based in Denver / Boulder, CO — open to full-time roles</li>
-      </ul>
-      <div class="pdp-tags">
-        <span>#AgenticAI</span><span>#RAG</span><span>#MCP</span><span>#ClaudeCode</span><span>#SpringBoot</span><span>#DistributedSystems</span>
-      </div>
-    </div>
+ <section class="sec">
+  <h2>Compare with similar candidates</h2>
+  <p class="sub2">How this profile stacks up against typical engineering hires</p>
+  <div class="tw"><table>
+   <tr><th></th><th class="hl">Srushti<small>this candidate</small></th><th>Typical backend engineer</th><th>Typical AI / ML engineer</th></tr>
+   <tr><td>Production backend (Spring Boot, Kafka, microservices)</td><td class="hl y1">✓</td><td class="y1">✓</td><td class="p1">~</td></tr>
+   <tr><td>Daily agentic development with Claude Code</td><td class="hl y1">✓</td><td class="n1">✕</td><td class="p1">~</td></tr>
+   <tr><td>Custom MCP server and agent loop</td><td class="hl y1">✓</td><td class="n1">✕</td><td class="n1">✕</td></tr>
+   <tr><td>Identity &amp; security (JWT, MFA, RBAC, IDOR fixes)</td><td class="hl y1">✓</td><td class="p1">~</td><td class="n1">✕</td></tr>
+   <tr><td>MS in Computer Science, AI specialization</td><td class="hl y1">✓</td><td class="p1">~</td><td class="y1">✓</td></tr>
+  </table></div>
+ </section>
 
-    <div class="buybox">
-      <div class="bb-status">Status: Open to full-time roles</div>
-      <div class="bb-sub">In stock — usually replies within 1 business day</div>
-      <div class="bb-prime"><i class="fa-solid fa-bolt"></i> Prime Candidate — fast ramp-up, day-one ownership</div>
-      <div class="bb-row"><b>Available starting:</b> Immediately</div>
-      <div class="bb-row"><b>Location:</b> Denver / Boulder, CO (open to relocation / remote)</div>
-      <hr class="bb-divider">
-      <div class="bb-ship">
-        Ships from and directed by <b>Srushti Sangawar</b><br>
-        Sold by <a href="mailto:srushtisangawar@gmail.com">srushtisangawar@gmail.com</a>
-      </div>
-      <a href="mailto:srushtisangawar@gmail.com" class="bb-btn bb-btn-yellow">Add to Team</a>
-      <a href="tel:+17206411726" class="bb-btn bb-btn-orange">Message Now</a>
-      <a href="https://www.linkedin.com/in/srushti-sangawar-64984717a/" target="_blank" class="bb-btn bb-btn-outline">Connect on LinkedIn</a>
-      <div class="bb-secure"><i class="fa-solid fa-lock"></i> Direct &amp; responsive — no recruiter middleman, no spam.</div>
-    </div>
+ <section class="sec" id="projects">
+  <h2>Results for "agentic AI engineer"</h2>
+  <div class="filters" role="group" aria-label="Filter projects">
+   <button class="fchip" aria-pressed="true" data-f="all">All</button><button class="fchip" aria-pressed="false" data-f="ai">Agentic AI</button><button class="fchip" aria-pressed="false" data-f="infra">Infra</button><button class="fchip" aria-pressed="false" data-f="oss">Open source</button>
   </div>
+  <div class="count" id="pc"></div>
+  <div id="plist"></div>
+ </section>
 
-  <!-- ═══ COMPARE TABLE ═══ -->
-  <div class="sec reveal">
-    <div class="sec-title">Compare with similar candidates</div>
-    <div class="sec-sub">How this profile stacks up against typical engineering hires</div>
-    <div style="overflow-x:auto">
-    <table class="cmp-table">
-      <tr>
-        <th></th>
-        <th class="hl">Srushti Sangawar<small>this candidate</small></th>
-        <th>Typical Backend Engineer</th>
-        <th>Typical AI / ML Engineer</th>
-      </tr>
-      <tr>
-        <td>Production code at scale (10M+ daily transactions)</td>
-        <td class="hl"><i class="fa-solid fa-circle-check yes"></i></td>
-        <td><i class="fa-solid fa-circle-check yes"></i></td>
-        <td><i class="fa-solid fa-minus partial"></i></td>
-      </tr>
-      <tr>
-        <td>Directs autonomous coding agents (Claude Code) end-to-end</td>
-        <td class="hl"><i class="fa-solid fa-circle-check yes"></i></td>
-        <td><i class="fa-solid fa-xmark no"></i></td>
-        <td><i class="fa-solid fa-minus partial"></i></td>
-      </tr>
-      <tr>
-        <td>Custom MCP server development</td>
-        <td class="hl"><i class="fa-solid fa-circle-check yes"></i></td>
-        <td><i class="fa-solid fa-xmark no"></i></td>
-        <td><i class="fa-solid fa-xmark no"></i></td>
-      </tr>
-      <tr>
-        <td>RAG / LLM-grounded systems</td>
-        <td class="hl"><i class="fa-solid fa-circle-check yes"></i></td>
-        <td><i class="fa-solid fa-xmark no"></i></td>
-        <td><i class="fa-solid fa-circle-check yes"></i></td>
-      </tr>
-      <tr>
-        <td>Security &amp; compliance hardening (HIPAA, IDOR, SQLi)</td>
-        <td class="hl"><i class="fa-solid fa-circle-check yes"></i></td>
-        <td><i class="fa-solid fa-minus partial"></i></td>
-        <td><i class="fa-solid fa-xmark no"></i></td>
-      </tr>
-      <tr>
-        <td>MS in Computer Science (AI concentration)</td>
-        <td class="hl"><i class="fa-solid fa-circle-check yes"></i></td>
-        <td><i class="fa-solid fa-minus partial"></i></td>
-        <td><i class="fa-solid fa-circle-check yes"></i></td>
-      </tr>
-    </table>
-    </div>
+ <section class="sec" id="experience">
+  <h2>Your Orders</h2>
+  <p class="sub2">4 roles · Nov 2020 to present</p>
+  <div id="olist"></div>
+ </section>
+
+ <section class="sec" id="skills">
+  <h2>Frequently used together</h2>
+  <p class="sub2">Technologies that show up across these orders and results</p>
+  <div class="sg" id="slist"></div>
+ </section>
+
+ <section class="sec" id="awards">
+  <h2>Amazon's Choice: Recognition</h2><p class="sub2"> </p>
+  <div class="ag" id="alist"></div>
+ </section>
+
+ <section class="sec" id="education">
+  <h2>Education</h2><p class="sub2"> </p>
+  <div class="edu">
+   <div><b>University of Colorado Boulder</b>MS, Computer Science (AI Specialization) · GPA 3.91/4.0<br><small>Algorithms, Data Mining, Neural Networks &amp; Deep Learning, Big Data Architecture, Datacenter Scale Computing, Computer Vision</small></div>
+   <div><b>NIT Rourkela, India</b>B.Tech, Computer Science and Engineering · GPA 8.0/10<br><small>Operating Systems, Computer Networks, Distributed Systems, Software Engineering, DSA</small></div>
   </div>
+ </section>
 
-  <!-- ═══ PROJECTS AS SEARCH RESULTS ═══ -->
-  <div class="sec reveal" id="projects">
-    <div class="sec-title">Results for "agentic AI engineer"</div>
-    <div class="results-count">1–4 of 4 results for <b>Projects</b></div>
-
-    <div class="result">
-      <div class="result-thumb" style="background:linear-gradient(135deg,#833AB4,#C13584)"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
-      <div>
-        <div class="result-badges"><span class="rb rb-choice"><i class="fa-solid fa-award"></i> Amazon's Choice</span></div>
-        <h3>DeployMate AI — RAG assistant for CI/K8s failures</h3>
-        <div class="rr-rating">
-          <span class="stars" style="width:76px"><span class="empty">★★★★★</span><span class="filled" style="width:96%">★★★★★</span></span>
-          <span class="rating-num">4.8 · retrieval upgraded after real accuracy testing</span>
-        </div>
-        <p>Full-stack RAG assistant that diagnoses Kubernetes and CI failures via semantic search, generating grounded diagnoses with recommended fixes. Iterated retrieval from TF-IDF to sentence-transformer embeddings after testing exposed a real match-accuracy gap.</p>
-        <div class="stack-line"><b>Stack:</b> React · FastAPI · LangChain · ChromaDB</div>
-        <div class="cap-tags"><span>#RAG</span><span>#LangChain</span><span>#ChromaDB</span><span>#ClaudeAPI</span></div>
-      </div>
-    </div>
-
-    <div class="result">
-      <div class="result-thumb" style="background:linear-gradient(135deg,#C13584,#E1306C)"><i class="fa-solid fa-server"></i></div>
-      <div>
-        <div class="result-badges"><span class="rb rb-choice"><i class="fa-solid fa-award"></i> Amazon's Choice</span></div>
-        <h3>OpsPilot MCP — human-gated Kubernetes agent</h3>
-        <div class="rr-rating">
-          <span class="stars" style="width:76px"><span class="empty">★★★★★</span><span class="filled" style="width:100%">★★★★★</span></span>
-          <span class="rating-num">5.0 · 8 automated test scenarios</span>
-        </div>
-        <p>Custom MCP server exposing 7 Kubernetes tools to an LLM agent, driven by a from-scratch Reason-Act-Observe loop. Destructive actions require explicit human approval before executing.</p>
-        <div class="stack-line"><b>Stack:</b> Python · MCP SDK · Claude API</div>
-        <div class="cap-tags"><span>#MCP</span><span>#AgentLoop</span><span>#LeastPrivilege</span></div>
-      </div>
-    </div>
-
-    <div class="result">
-      <div class="result-thumb" style="background:linear-gradient(135deg,#E1306C,#F77737)"><i class="fa-solid fa-diagram-project"></i></div>
-      <div>
-        <div class="result-badges"><span class="rb rb-early">Early Access</span></div>
-        <h3>VoxOff — distributed AI media processing</h3>
-        <p>Distributed AI media processing pipeline with Python workers on GKE, RabbitMQ task queues, and Docker, paired with a React frontend for real-time interaction.</p>
-        <div class="stack-line"><b>Stack:</b> GKE · RabbitMQ · React</div>
-        <div class="cap-tags"><span>#GKE</span><span>#RabbitMQ</span><span>#React</span></div>
-      </div>
-    </div>
-
-    <div class="result">
-      <div class="result-thumb" style="background:linear-gradient(135deg,#F77737,#FCAF45)"><i class="fa-solid fa-people-arrows"></i></div>
-      <div>
-        <div class="result-badges"><span class="rb rb-early">Early Access</span></div>
-        <h3>Third Space — real-time matchmaking</h3>
-        <p>Real-time matchmaking service using Redis Pub/Sub to eliminate client polling, carefully managing consistency between transient Redis state and persistent Firestore data.</p>
-        <div class="stack-line"><b>Stack:</b> Redis · Firestore · REST</div>
-        <div class="cap-tags"><span>#Redis</span><span>#Firestore</span><span>#EventDriven</span></div>
-      </div>
-    </div>
+ <section class="co-box" id="contact">
+  <div><h2>Ready to proceed to checkout?</h2><p>Open to full-time roles, especially where AI-directed engineering meets infrastructure with real stakes.</p></div>
+  <div class="acts">
+   <a class="btn y" href="mailto:srushtisangawar@gmail.com">Email me</a>
+   <a class="btn" href="tel:+17206411726">(720) 641-1726</a>
+   <a class="btn" href="https://www.linkedin.com/in/srushti-sangawar-64984717a/" target="_blank" rel="noopener">LinkedIn</a>
+   <a class="btn" href="https://github.com/srurora" target="_blank" rel="noopener">GitHub</a>
   </div>
-
-  <!-- ═══ EXPERIENCE AS ORDER HISTORY ═══ -->
-  <div class="sec reveal" id="experience">
-    <div class="sec-title">Your Orders</div>
-    <div class="sec-sub">4 roles · Jun 2022 – Present</div>
-
-    <div class="order">
-      <div class="order-head">
-        <div class="oh-block"><b>Order Placed</b><span>Jan 2026</span></div>
-        <div class="oh-block"><b>Duration</b><span>Jan – Mar 2026</span></div>
-        <div class="oh-block"><b>Ship To</b><span>Boulder, CO</span></div>
-        <div class="oh-block oh-num"><b>Order #</b><span>CL-2026-0103</span></div>
-      </div>
-      <div class="order-body">
-        <div class="order-logo" style="background:linear-gradient(135deg,#833AB4,#C13584)">CL</div>
-        <div>
-          <div class="order-role">Software Engineer &amp; Delivery Lead</div>
-          <div class="order-company">Cohesion Labs LLC</div>
-          <div class="order-loc">Boulder, CO · Agentic AI · Healthcare compliance</div>
-          <div class="progress"><span class="pdot"></span><span class="pline"></span><span class="pdot"></span><span class="pline"></span><span class="pdot"></span></div>
-          <div class="progress-labels"><span>Onboarded</span><span>Shipped</span><span>Delivered</span></div>
-          <details>
-            <summary>Order details</summary>
-            <ul class="order-list">
-              <li>Architected an autonomous Claude Code operator workflow for a HIPAA-compliant healthcare platform: persistent project memory (CLAUDE.md) enforcing git branching, testing, HIPAA checks, and deployment standards every session — plain-English requests executed end-to-end without manual intervention.</li>
-              <li>Led a security hardening initiative — closed SQL injection and IDOR vulnerabilities, implemented PHI redaction across 12 fields, added audit logging, backed by 65+ new compliance tests (682/682 passing across 18 test files).</li>
-            </ul>
-          </details>
-          <div class="order-tags"><span>#ClaudeCode</span><span>#HIPAA</span><span>#Security</span></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="order">
-      <div class="order-head">
-        <div class="oh-block"><b>Order Placed</b><span>May 2025</span></div>
-        <div class="oh-block"><b>Duration</b><span>May – Oct 2025</span></div>
-        <div class="oh-block"><b>Ship To</b><span>Westminster, CO</span></div>
-        <div class="oh-block oh-num"><b>Order #</b><span>TR-2025-0512</span></div>
-      </div>
-      <div class="order-body">
-        <div class="order-logo" style="background:linear-gradient(135deg,#C13584,#E1306C)">TR</div>
-        <div>
-          <div class="order-role">Software Engineering Intern</div>
-          <div class="order-company">Trimble Inc.</div>
-          <div class="order-loc">Westminster, CO · CI/CD · Embedded systems</div>
-          <div class="progress"><span class="pdot"></span><span class="pline"></span><span class="pdot"></span><span class="pline"></span><span class="pdot"></span></div>
-          <div class="progress-labels"><span>Onboarded</span><span>Shipped</span><span>Delivered</span></div>
-          <details>
-            <summary>Order details</summary>
-            <ul class="order-list">
-              <li>Built CI/CD pipelines using Bamboo, AWS CLI, and shell scripting to automate build and test workflows for embedded systems.</li>
-              <li>Developed a Python reporting dashboard with latency visualizations, using Gemini to summarize test output and flag anomalies — reducing manual analysis time.</li>
-            </ul>
-          </details>
-          <div class="order-tags"><span>#Bamboo</span><span>#AWS</span><span>#Gemini</span></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="order">
-      <div class="order-head">
-        <div class="oh-block"><b>Order Placed</b><span>Jun 2022</span></div>
-        <div class="oh-block"><b>Duration</b><span>Jun 2022 – Jul 2024</span></div>
-        <div class="oh-block"><b>Ship To</b><span>Bengaluru, India</span></div>
-        <div class="oh-block oh-num"><b>Order #</b><span>LW-2022-0601</span></div>
-      </div>
-      <div class="order-body">
-        <div class="order-logo" style="background:linear-gradient(135deg,#E1306C,#F77737)">LW</div>
-        <div>
-          <div class="order-role">Software Engineer — Backend</div>
-          <div class="order-company">Lowe's India</div>
-          <div class="order-loc">Bengaluru, India · Distributed systems · 10M+ daily transactions</div>
-          <div class="progress"><span class="pdot"></span><span class="pline"></span><span class="pdot"></span><span class="pline"></span><span class="pdot"></span></div>
-          <div class="progress-labels"><span>Onboarded</span><span>Shipped</span><span>Delivered</span></div>
-          <details>
-            <summary>Order details</summary>
-            <ul class="order-list">
-              <li>Led end-to-end migration of a legacy microservice from Java 8→17 and Spring Boot 2→3 with zero breaking changes.</li>
-              <li>Designed scalable multi-tenant microservices with Spring Boot, MySQL, and Redis; implemented Kafka for real-time, event-driven transactional workflows.</li>
-              <li>Built automated observability with Kibana/Grafana; set up CI/CD with Jenkins, Docker, and Git.</li>
-              <li>Built PSH, a developer productivity app that reduced incident investigation time by 80% for 30+ engineers.</li>
-            </ul>
-          </details>
-          <div class="order-tags"><span>#Java17</span><span>#Kafka</span><span>#SpringBoot</span></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="order">
-      <div class="order-head">
-        <div class="oh-block"><b>Order Placed</b><span>Nov 2020</span></div>
-        <div class="oh-block"><b>Duration</b><span>Nov 2020 – Feb 2021</span></div>
-        <div class="oh-block"><b>Ship To</b><span>Mumbai, India</span></div>
-        <div class="oh-block oh-num"><b>Order #</b><span>HL-2020-1101</span></div>
-      </div>
-      <div class="order-body">
-        <div class="order-logo" style="background:linear-gradient(135deg,#F77737,#FCAF45)">HL</div>
-        <div>
-          <div class="order-role">Software Development Intern</div>
-          <div class="order-company">HDFC Life</div>
-          <div class="order-loc">Mumbai, India · Frontend · Healthcare</div>
-          <div class="progress"><span class="pdot"></span><span class="pline"></span><span class="pdot"></span><span class="pline"></span><span class="pdot"></span></div>
-          <div class="progress-labels"><span>Onboarded</span><span>Shipped</span><span>Delivered</span></div>
-          <details>
-            <summary>Order details</summary>
-            <ul class="order-list">
-              <li>Built the frontend for Click2Wellness, an in-house health tracking app, using ReactJS — adopted by 500+ employees.</li>
-            </ul>
-          </details>
-          <div class="order-tags"><span>#ReactJS</span><span>#Agile</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ═══ SKILLS "FREQUENTLY USED TOGETHER" ═══ -->
-  <div class="sec reveal" id="skills">
-    <div class="sec-title">Frequently used together</div>
-    <div class="sec-sub">Technologies that show up across these orders and results</div>
-    <div class="skill-groups">
-      <div class="skill-group">
-        <h4>Languages</h4>
-        <div class="skill-chip-row">
-          <span class="skill-chip">Java 17</span><span class="skill-chip">Python</span><span class="skill-chip">TypeScript</span><span class="skill-chip">C++</span><span class="skill-chip">SQL</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <h4>AI &amp; Agentic</h4>
-        <div class="skill-chip-row">
-          <span class="skill-chip">LangChain</span><span class="skill-chip">LLM Integration</span><span class="skill-chip">Prompt Engineering</span><span class="skill-chip">Claude Code</span><span class="skill-chip">OpenCV</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <h4>Backend &amp; APIs</h4>
-        <div class="skill-chip-row">
-          <span class="skill-chip">Spring Boot</span><span class="skill-chip">FastAPI</span><span class="skill-chip">REST</span><span class="skill-chip">gRPC</span><span class="skill-chip">Kafka</span><span class="skill-chip">Redis</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <h4>Frontend</h4>
-        <div class="skill-chip-row">
-          <span class="skill-chip">React</span><span class="skill-chip">Responsive UI</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <h4>Data &amp; Storage</h4>
-        <div class="skill-chip-row">
-          <span class="skill-chip">MySQL</span><span class="skill-chip">PostgreSQL</span><span class="skill-chip">Cassandra</span><span class="skill-chip">Firestore</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <h4>Cloud &amp; DevOps</h4>
-        <div class="skill-chip-row">
-          <span class="skill-chip">AWS</span><span class="skill-chip">GCP</span><span class="skill-chip">Docker</span><span class="skill-chip">Kubernetes</span><span class="skill-chip">Jenkins</span><span class="skill-chip">CI/CD</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <h4>Observability &amp; Testing</h4>
-        <div class="skill-chip-row">
-          <span class="skill-chip">Grafana</span><span class="skill-chip">Kibana</span><span class="skill-chip">JUnit</span><span class="skill-chip">E2E Testing</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <h4>Practice</h4>
-        <div class="skill-chip-row">
-          <span class="skill-chip">Agile</span><span class="skill-chip">System Design</span><span class="skill-chip">Distributed Systems</span>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ═══ AWARDS ═══ -->
-  <div class="sec reveal" id="awards">
-    <div class="sec-title">Amazon's Choice — Recognition</div>
-    <div class="award-grid">
-      <div class="award-card">
-        <div class="award-ribbon"><i class="fa-solid fa-trophy"></i> 3rd Place</div>
-        <h5>T9Hacks — AI in Healthcare</h5>
-        <p>Built RePosture AI, a real-time posture correction tool, in a 24-hour hackathon.</p>
-      </div>
-      <div class="award-card">
-        <div class="award-ribbon"><i class="fa-solid fa-star"></i> Spot Award</div>
-        <h5>Lowe's India</h5>
-        <p>Recognized for the Java 8→17 / Spring Boot 2→3 migration at scale.</p>
-      </div>
-      <div class="award-card">
-        <div class="award-ribbon"><i class="fa-solid fa-medal"></i> Round 3</div>
-        <h5>Flipkart Grid Challenge 2.0</h5>
-        <p>Reached round 3 among 22,000+ national participants.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- ═══ CONTACT / CHECKOUT ═══ -->
-  <div class="checkout reveal" id="contact">
-    <div class="checkout-copy">
-      <h3>Ready to proceed to checkout?</h3>
-      <p>Open to full-time roles — especially where AI-directed engineering meets infrastructure with real stakes.</p>
-    </div>
-    <div class="checkout-actions">
-      <a href="mailto:srushtisangawar@gmail.com" class="co-btn co-primary">Email srushtisangawar@gmail.com</a>
-      <a href="tel:+17206411726" class="co-btn co-secondary">(720) 641-1726</a>
-      <a href="https://www.linkedin.com/in/srushti-sangawar-64984717a/" target="_blank" class="co-btn co-secondary">LinkedIn</a>
-      <a href="https://github.com/srurora" target="_blank" class="co-btn co-secondary">GitHub</a>
-    </div>
-  </div>
-
+ </section>
 </div>
-
-<!-- ═══ FOOTER ═══ -->
-<div class="back-top" onclick="document.getElementById('top').scrollIntoView({behavior:'smooth'})">Back to top ▲</div>
-<div class="footer">
-  <div class="footer-cols">
-    <div>
-      <h6>Get to Know Me</h6>
-      <a href="#top">About</a>
-      <a href="#experience">Experience</a>
-      <a href="#awards">Awards</a>
-    </div>
-    <div>
-      <h6>Browse</h6>
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#contact">Contact</a>
-    </div>
-    <div>
-      <h6>Connect</h6>
-      <a href="https://www.linkedin.com/in/srushti-sangawar-64984717a/" target="_blank">LinkedIn</a>
-      <a href="https://github.com/srurora" target="_blank">GitHub</a>
-      <a href="mailto:srushtisangawar@gmail.com">Email</a>
-    </div>
-    <div>
-      <h6>Location</h6>
-      <a href="#top">Denver / Boulder, CO</a>
-      <a href="#top">MS CS (AI), CU Boulder</a>
-    </div>
-  </div>
-  <div class="footer-bottom">© 2026 Srushti Sangawar · Not affiliated with Amazon.com, Inc. — just a design homage.</div>
-</div>
+<footer>© 2026 Srushti Sangawar · Not affiliated with Amazon.com, Inc. Just a design homage.</footer>
+<div id="toast" role="status" aria-live="polite"></div>
 
 <script>
-const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}})},{threshold:.06});
-document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+const P=[
+{c:'ai',t:'OpsPilot MCP: AI DevOps agent with a custom MCP server',g:'linear-gradient(135deg,#833AB4,#C13584)',i:'MCP',r:'5.0',n:'8 automated test scenarios',d:'Custom MCP server exposing 7 Kubernetes diagnostic and remediation tools to an LLM agent, driven by a from-scratch Reason-Act-Observe loop. A least-privilege boundary requires explicit human approval before destructive actions like pod restarts.',s:'Python · MCP SDK · Claude API · Kubernetes',k:['MCP','AgentLoop','LeastPrivilege'],ch:1},
+{c:'ai',t:'Agentic AI system for malware reverse engineering',g:'linear-gradient(135deg,#C13584,#E1306C)',i:'RE',r:'4.9',n:'Gemini 2.5 Pro + Ghidra',d:'Agentic system that autonomously runs static and dynamic malware analysis through Ghidra, finds vulnerabilities, and generates proof-of-concept exploits with LLM-guided reasoning. Includes validation of model output for hallucination and study of agent attack surfaces such as tool misuse and adversarial prompting.',s:'Gemini ADK · Gemini 2.5 Pro · MCP · Ghidra',k:['Agents','Security','LLMEval'],ch:1},
+{c:'infra',t:'VoxOff: AI-powered distributed karaoke platform',g:'linear-gradient(135deg,#E1306C,#F77737)',i:'VOX',d:'Distributed AI media pipeline: Python workers on GKE, RabbitMQ task queues, and Docker process audio asynchronously for concurrent users, avoiding a single processing bottleneck. React frontend for real-time interaction.',s:'GKE · RabbitMQ · Docker · React',k:['GKE','RabbitMQ','React']},
+{c:'oss',t:'Zizmor static analysis CI workflow (collective/icalendar)',g:'linear-gradient(135deg,#F77737,#FCAF45)',i:'OSS',d:'Added a GitHub Actions workflow running Zizmor on every pull request and push to main, closing a gap in supply-chain and workflow-injection scanning. Results upload as SARIF to the Security tab. All actions pinned to commit SHAs after maintainer security review.',s:'GitHub Actions · Zizmor · SARIF',k:['OpenSource','SupplyChain','CI']}];
+const X=[
+{l:'CL',g:'linear-gradient(135deg,#833AB4,#C13584)',r:'AI Software Engineer & Delivery Lead',co:'Cohesion Labs LLC',loc:'Boulder, CO',dur:'Jan to Mar 2026',pl:'Jan 2026',no:'CL-2026-0103',o:1,
+b:['<b>Database migration:</b> zero-downtime production move from SurrealDB to PostgreSQL across 23+ tables, with schema redesign, query tuning, and strict schema governance for financial and identity pipelines.','<b>Identity &amp; IAM:</b> JWT RS256, bcrypt, TOTP MFA, and role-based access control across 23+ tables.','<b>Integration security:</b> fixed IDOR vulnerabilities, enforced PKI certificate security over HTTPS, restricted access with dynamic RBAC policies.','<b>Full-stack:</b> ReactJS (TypeScript) features on asynchronous backend services with reliable REST communication.','<b>AI agents:</b> built and deployed autonomous agents with Claude and MCP for delivery workflows, testing, compliance checks, and PR triage from natural language prompts.','<b>Delivery:</b> led releases across 3 Agile sprints and wrote 16+ integration and unit test suites.'],t:['ClaudeCode','MCP','PostgreSQL','RBAC']},
+{l:'TR',g:'linear-gradient(135deg,#C13584,#E1306C)',r:'Software Engineering Intern',co:'Trimble',loc:'Westminster, CO',dur:'May to Oct 2025',pl:'May 2025',no:'TR-2025-0512',b:['<b>Cloud &amp; APIs:</b> designed and maintained reusable RESTful APIs in C# and Python with request validation, retries, and structured error handling.','<b>Testing &amp; SCM:</b> wrote 30+ automated unit and integration tests; managed multi-branch code in Git and Bitbucket with CI/CD validation.','<b>Data pipelines:</b> ingestion of 5K+ records per run with schema validation, 99.9% data integrity.'],t:['C#','Python','CI/CD','Bitbucket']},
+{l:'LW',g:'linear-gradient(135deg,#E1306C,#F77737)',r:'Software Engineer, Backend',co:"Lowe's India",loc:'Bengaluru, India',dur:'Jun 2022 to Jul 2024',pl:'Jun 2022',no:'LW-2022-0601',bl:"Worked on Lowe's Order Management System, which manages orders across pickup, delivery, and store operations. Focused on reliability, dependable order updates, and faster production diagnosis.",b:['<b>Migration:</b> led a production Spring Boot 2 to 3 upgrade with 95% code coverage and zero production-impacting failures.','<b>Developer tool:</b> built a Spring Boot + React tool that pulled Kibana logs into an expected-vs-actual table and flagged the failing payload, cutting investigation time ~80%.','<b>Kafka:</b> event streaming for order-state changes with idempotent processing and retry handling.','<b>Observability:</b> standardized event schemas and API contracts; added structured logging, correlation IDs, and Prometheus metrics.','<b>On-call:</b> supported peak events including Black Friday, tracing incidents across distributed microservices.'],t:['SpringBoot','Kafka','Prometheus','Kibana']},
+{l:'HL',g:'linear-gradient(135deg,#F77737,#FCAF45)',r:'Software Development Intern (Front End)',co:'HDFC Life',loc:'Mumbai, India',dur:'Nov 2020 to Feb 2021',pl:'Nov 2020',no:'HL-2020-1101',bl:'Employee wellness platform built around challenges, rewards, and friendly competition for a large, non-technical audience.',b:['Built step-count and calorie challenges, a points-based rewards system, and a leaderboard on RESTful APIs with dynamic ranking.','Responsive UI, form validation, and ARIA-compliant components for accessibility.','Supported rollout with usage tracking, driving engagement among 500+ employees.'],t:['ReactJS','Accessibility','REST']}];
+const S={'Languages':['Java 17+','Python','JavaScript','TypeScript','C++','SQL','Bash','HTML/CSS'],'AI & Agentic':['Claude Code','LangChain','MCP','LLM Integration','Prompt Engineering','RAG','OpenCV','Computer Vision'],'Backend & Systems':['Spring Boot','FastAPI','REST','gRPC','Kafka','Redis','Microservices'],'Databases':['PostgreSQL','MySQL','Redis','Cassandra','Cosmos DB','Cloud SQL','Firestore'],'Cloud & DevOps':['AWS (EC2, S3, Lambda)','GCP (GKE)','Docker','Kubernetes','Jenkins','Bamboo','CI/CD','Git'],'Identity & Security':['IAM','LDAP','Active Directory','Entra ID','MFA / TOTP','JWT RS256','RBAC','PKI','OWASP','HIPAA'],'Protocols':['HTTP/HTTPS','TLS/SSL','TCP/IP','DNS','WebSockets','gRPC'],'Observability':['Grafana','Kibana','Micrometer','Prometheus'],'Methodology':['Agile','Scrum','Code review','Production deployment']};
+const A=[['3rd Place · Jan 2025','T9Hacks 2025, AI in Healthcare','Built RePosture AI, a computer vision and deep learning tool for real-time posture correction with streak-based gamification, in 24 hours.'],['Spot Award · Mar 2024',"Lowe's India",'Recognized for leading backend modernization: Java 8 to 17 and Spring Boot 2 to 3, Sonar coverage compliance, better observability and tracing.'],['Round 3 · Jun 2020','Flipkart Grid Challenge 2.0','Qualified for round 3 among 22,000+ participants; 148 teams selected from 300+ in round 2.']];
+const $=s=>document.querySelector(s),E=a=>a.map(x=>`<span>#${x}</span>`).join('');
+$('#plist').innerHTML=P.map(p=>`<article class="res" data-c="${p.c}"><div class="thumb" style="background:${p.g}">${p.i}</div><div>${p.ch?'<span class="choice"><b>★</b> Amazon\'s Choice</span>':'<span class="choice" style="background:var(--chip);color:var(--dim)">Project</span>'}<h3><a href="https://github.com/srurora" target="_blank" rel="noopener">${p.t}</a></h3>${p.r?`<div class="rate" style="border:0;padding:0;margin:0 0 6px"><span class="stars" aria-hidden="true">★★★★★</span><span>${p.r} · ${p.n}</span></div>`:''}<p>${p.d}</p><div class="stack"><b>Stack:</b> ${p.s}</div><div class="cap">${E(p.k)}</div></div></article>`).join('');
+$('#olist').innerHTML=X.map(x=>`<article class="ord"><div class="oh"><div><b>ORDER PLACED</b>${x.pl}</div><div><b>DURATION</b>${x.dur}</div><div><b>SHIP TO</b>${x.loc}</div><div class="num"><b>ORDER #</b>${x.no}</div></div><div class="ob"><div class="role">${x.r}</div><div class="co">${x.co}</div>${x.bl?`<div class="blurb">${x.bl}</div>`:''}<div class="prog" aria-hidden="true"><i></i><u></u><i></i><u></u><i></i></div><div class="pl"><span>Onboarded</span><span>Shipped</span><span>Delivered</span></div><details ${x.o?'open':''}><summary>Order details</summary><ul>${x.b.map(b=>`<li>${b}</li>`).join('')}</ul></details><div class="tags">${E(x.t)}</div></div></article>`).join('');
+$('#slist').innerHTML=Object.entries(S).map(([k,v])=>`<div><h4>${k}</h4><div class="chips">${v.map(c=>`<span class="chip">${c}</span>`).join('')}</div></div>`).join('');
+$('#alist').innerHTML=A.map(a=>`<div class="aw"><span class="choice"><b>★</b> ${a[0]}</span><h3>${a[1]}</h3><p>${a[2]}</p></div>`).join('');
 
-document.querySelectorAll('a[href^="#"]').forEach(a=>{
-  a.addEventListener('click',e=>{
-    const id=a.getAttribute('href');
-    if(id.length>1){e.preventDefault();const t=document.querySelector(id);if(t)t.scrollIntoView({behavior:'smooth',block:'start'})}
-  });
-});
+function filt(f){let n=0;document.querySelectorAll('.res').forEach(r=>{const s=f==='all'||r.dataset.c===f;r.hidden=!s;if(s)n++});$('#pc').textContent=`${n} of ${P.length} results for Projects`}
+document.querySelectorAll('.fchip').forEach(b=>b.onclick=()=>{document.querySelectorAll('.fchip').forEach(x=>x.setAttribute('aria-pressed',x===b));filt(b.dataset.f)});
+filt('all');
 
-function doSearch(e){
-  e.preventDefault();
-  const q=document.getElementById('siteSearch').value.trim();
-  if(!q){return false}
-  document.getElementById('projects').scrollIntoView({behavior:'smooth',block:'start'});
-  const targets=document.querySelectorAll('.result, .skill-chip, .order');
-  let hit=null;
-  targets.forEach(el=>{
-    el.style.outline='none';
-    if(el.innerText.toLowerCase().includes(q.toLowerCase())&&!hit){hit=el}
-  });
-  if(hit){hit.style.outline='2px solid #FF9900';hit.style.borderRadius='6px';hit.scrollIntoView({behavior:'smooth',block:'center'})}
-  return false;
-}
+const toast=m=>{const t=$('#toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1800)};
+$('#copy').onclick=async()=>{try{await navigator.clipboard.writeText('srushtisangawar@gmail.com');toast('Email copied')}catch(e){toast('srushtisangawar@gmail.com')}};
+$('#theme').onclick=()=>{const r=document.documentElement,d=r.dataset.theme?r.dataset.theme==='dark':matchMedia('(prefers-color-scheme:dark)').matches;r.dataset.theme=d?'light':'dark'};
+
+$('#sf').onsubmit=e=>{e.preventDefault();
+ document.querySelectorAll('mark').forEach(m=>m.replaceWith(m.textContent));
+ document.querySelectorAll('.res').forEach(r=>r.hidden=false);
+ const q=$('#q').value.trim().toLowerCase();if(!q)return;
+ const hit=[...document.querySelectorAll('.res,.ord,.chip,.aw')].find(el=>el.textContent.toLowerCase().includes(q));
+ if(!hit){toast('No match for "'+q+'"');return}
+ const d=hit.querySelector('details');if(d)d.open=true;
+ hit.scrollIntoView({block:'center'});hit.style.outline='2px solid var(--orange)';setTimeout(()=>hit.style.outline='',2500)};
+
+const links=[...document.querySelectorAll('.sub a[href^="#"]')];
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)links.forEach(a=>a.classList.toggle('on',a.hash==='#'+e.target.id))}),{rootMargin:'-40% 0px -55% 0px'});
+document.querySelectorAll('section[id]').forEach(x=>io.observe(x));
 </script>
 </body>
 </html>
